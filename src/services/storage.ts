@@ -24,3 +24,9 @@ export function saveEntries(entries: Entry[]): void {
         // ignore storage errors
     }
 }
+
+export function clearEntries(): void {
+    try {
+        localStorage.removeItem(STORAGE_KEY)
+    } catch { /* empty */ }
+}
