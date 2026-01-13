@@ -14,5 +14,13 @@ export function loadEntries(): Entry[] {
     } catch {
         return [];
     }
+}
 
+export function saveEntries(entries: Entry[]): void {
+    try {
+        const rawEntries = JSON.stringify(entries);
+        localStorage.setItem(STORAGE_KEY, rawEntries)
+    } catch {
+        // ignore storage errors
+    }
 }
