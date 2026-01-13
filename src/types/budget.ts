@@ -1,3 +1,4 @@
+//EntryType union for income and expense
 export type EntryType = "expense" | "income";
 
 export type Entry = {
