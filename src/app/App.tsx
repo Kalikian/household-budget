@@ -1,11 +1,18 @@
 import { useState } from "react";
 import AppLogo from "../components/AppLogo";
 
+type SelectAction = "expense" | "income";
+
 function App() {
-  const [selectedAction, setSelectedAction] = useState("");
+  const [selectedAction, setSelectedAction] = useState<SelectAction>("expense");
+
+  const actionStyles = {
+    income: "text-green-800 bg-green-200",
+    expense: "text-red-800 bg-red-200",
+  };
 
   function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
-    setSelectedAction(e.target.value);
+    setSelectedAction(e.target.value as SelectAction);
   }
 
   return (
@@ -19,13 +26,12 @@ function App() {
           <select
             defaultValue=""
             name="selectedAction"
-            className="border-2 ml-2 rounded-md"
+            className={`border-2 ml-2 rounded-md  ${actionStyles[selectedAction] ?? ""}`}
             value={selectedAction}
             onChange={handleChange}
           >
-            <option className=""></option>
-            <option className="text-green-400">income</option>
-            <option className="text-red-400">expense</option>
+            <option className="text-red-800 bg-red-200">expense</option>
+            <option className="text-green-800 bg-green-200">income</option>
           </select>
         </label>
       </main>

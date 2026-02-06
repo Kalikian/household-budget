@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   min-height: 100vh;
   background-image: linear-gradient(
@@ -7,4 +15,6 @@ body {
     oklch(92.9% 0.013 255.508),
     white
   );
+  font-family: "Roboto", system-ui, sans-serif;
+  font-weight: 400;
 }
