@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-
-type SelectAction = "expense" | "income";
+import type { EntryType } from "../types/budget";
 
 export default function TransactionTypeSelect() {
-  const [selectedAction, setSelectedAction] = useState<SelectAction>("expense");
+  const [selectedAction, setSelectedAction] = useState<EntryType>("expense");
 
   const actionStyles = {
     income: "text-green-800 bg-green-200",
@@ -11,7 +10,7 @@ export default function TransactionTypeSelect() {
   };
 
   function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
-    setSelectedAction(e.target.value as SelectAction);
+    setSelectedAction(e.target.value as EntryType);
   }
   return (
     <div>

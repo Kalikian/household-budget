@@ -1,5 +1,5 @@
 import AppLogo from "../components/AppLogo";
-import TransactionTypeSelect from "../components/TransactionTypeSelect";
+import TransactionForm from "../components/TransactionForm";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
         <AppLogo />
       </header>
       <main className="flex justify-center my-6">
-        <TransactionTypeSelect />
+        <TransactionForm />
       </main>
       <footer className="flex justify-center my-6"></footer>
     </>

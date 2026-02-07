@@ -5,7 +5,7 @@ export type Entry = {
     id: string,
     type: EntryType,
     amount: number,
-    categoryId: string,
+    category: string,
     date: string,
     note?: string
 }

@@ -18,3 +18,16 @@ body {
   font-family: "Roboto", system-ui, sans-serif;
   font-weight: 400;
 }
+
+input {
+  margin: 1rem;
+  padding: 0.25rem;
+  border: 2px solid grey;
+  border-radius: 0.25rem;
+  transition: border-color 0.25s ease;
+}
+
+input:focus {
+  border-color: oklch(68.5% 0.169 237.323);
+  outline: none;
+}
