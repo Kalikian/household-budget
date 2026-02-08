@@ -16,7 +16,6 @@ export default function EntryTypeSelect() {
     <div className="flex items-center justify-between w-full">
       <label className="">Transaction type:</label>
       <select
-        defaultValue=""
         name="selectedAction"
         className={`${actionStyles[selectedAction] ?? ""}`}
         value={selectedAction}

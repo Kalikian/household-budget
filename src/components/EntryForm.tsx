@@ -1,6 +1,7 @@
 import AmountInput from "./AmountInput";
 import EntryCategory from "./EntryCategory";
 import EntryTypeSelect from "./EntryTypeSelect";
+import Note from "./Note";
 
 export default function EntryForm() {
   return (
@@ -8,6 +9,7 @@ export default function EntryForm() {
       <EntryTypeSelect />
       <AmountInput />
       <EntryCategory />
+      <Note />
     </div>
   );
 }
