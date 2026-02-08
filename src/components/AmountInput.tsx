@@ -18,22 +18,22 @@ export default function AmountInput() {
   }
 
   return (
-    <div>
-      <label htmlFor="amount">
+    <div className="flex items-center justify-between w-full">
+      <label htmlFor="amount" className="">
         Amount:
-        <input
-          className=""
-          name="inputAmount"
-          id="amount"
-          onChange={handleChange}
-          value={amount}
-          placeholder="Enter amount"
-          type="number"
-          min={0}
-          step={0.01}
-          inputMode="decimal"
-        ></input>
       </label>
+      <input
+        className="w-32"
+        name="inputAmount"
+        id="amount"
+        onChange={handleChange}
+        value={amount}
+        placeholder="Enter amount"
+        type="number"
+        min={0}
+        step={1}
+        inputMode="decimal"
+      ></input>
     </div>
   );
 }

@@ -31,3 +31,10 @@ input:focus {
   border-color: oklch(48.8% 0.243 264.376);
   outline: none;
 }
+
+select {
+  border: 2px solid grey;
+  border-radius: 6px;
+  margin: 1rem;
+  padding: 0.25rem;
+}
