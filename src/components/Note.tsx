@@ -8,10 +8,10 @@ export default function Note() {
   }
 
   return (
-    <div className="flex flex-wrap justify-center items-center">
+    <div className="flex flex-col justify-center">
       <label>Note:</label>
       <textarea
-        className="flex items-center justify-between  "
+        className="border border-solid rounded-md border-gray-400 p-2"
         placeholder="Write your note ..."
         name="noteArea"
         onChange={handleOnChange}

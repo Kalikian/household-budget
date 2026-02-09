@@ -13,10 +13,8 @@ export default function EntryTypeSelect() {
     setSelectedAction(e.target.value as EntryType);
   }
   return (
-    <div className="flex flex-col px-4 md:item start">
-      <label className="" id="selectedAction">
-        Entry type:
-      </label>
+    <div className="flex flex-col md:item start">
+      <label id="selectedAction">Entry type:</label>
       <select
         name="selectedAction"
         className={`border border-solid rounded-md border-gray-400 p-2 ${actionStyles[selectedAction] ?? ""}`}

@@ -1,24 +1,29 @@
 import React, { useState } from "react";
 import { ENTRY_CATEGORIES, type EntryCategoryType } from "../types/budget";
 
+type EntryCategorySelectValue = EntryCategoryType | "";
+
 export default function EntryCategory() {
   const [selcetAction, setSelectAction] =
-    useState<EntryCategoryType>("Housing");
+    useState<EntryCategorySelectValue>("");
 
   function handleOnChange(e: React.ChangeEvent<HTMLSelectElement>) {
-    setSelectAction(e.target.value as EntryCategoryType);
+    setSelectAction(e.target.value as EntryCategorySelectValue);
   }
 
   return (
-    <div className="flex flex-wrap justify-center items-center">
+    <div className="flex flex-col justify-center">
       <label htmlFor="category">Entry Category:</label>
       <select
-        className="border border-solid rounded-md border-gray-400 p-2 m-2"
+        className="border border-solid rounded-md border-gray-400 p-2"
         id="category"
         name="category"
         onChange={handleOnChange}
         value={selcetAction}
       >
+        <option className="text-gray-400" value="" disabled>
+          -- Enter Category --
+        </option>
         {ENTRY_CATEGORIES.map((v) => (
           <option key={v}>{v}</option>
         ))}

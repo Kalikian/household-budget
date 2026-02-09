@@ -18,12 +18,12 @@ export default function AmountInput() {
   }
 
   return (
-    <div className="flex flex-wrap justify-center items-center">
+    <div className="flex flex-col justify-center">
       <label htmlFor="amount" className="">
         Amount:
       </label>
       <input
-        className="w-32"
+        className="border border-solid rounded-md border-gray-400 p-2 w-32"
         name="inputAmount"
         id="amount"
         onChange={handleChange}
