@@ -13,11 +13,13 @@ export default function EntryTypeSelect() {
     setSelectedAction(e.target.value as EntryType);
   }
   return (
-    <div className="flex items-center justify-between w-full">
-      <label className="">Transaction type:</label>
+    <div className="flex flex-col px-4 md:item start">
+      <label className="" id="selectedAction">
+        Entry type:
+      </label>
       <select
         name="selectedAction"
-        className={`${actionStyles[selectedAction] ?? ""}`}
+        className={`border border-solid rounded-md border-gray-400 p-2 ${actionStyles[selectedAction] ?? ""}`}
         value={selectedAction}
         onChange={handleChange}
       >

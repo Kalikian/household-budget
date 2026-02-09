@@ -5,11 +5,13 @@ import Note from "./Note";
 
 export default function EntryForm() {
   return (
-    <div className="flex flex-col w-full max-w-xs">
+    <div className=" w-full max-w-4xl mx-auto">
       <EntryTypeSelect />
-      <AmountInput />
-      <EntryCategory />
-      <Note />
+      <div className="flex flex-wrap justify-center md:justify-between lg:flex-nowrap">
+        <AmountInput />
+        <EntryCategory />
+        <Note />
+      </div>
     </div>
   );
 }

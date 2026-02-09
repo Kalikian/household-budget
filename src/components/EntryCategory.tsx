@@ -10,9 +10,10 @@ export default function EntryCategory() {
   }
 
   return (
-    <div className="flex items-center justify-between w-full">
+    <div className="flex flex-wrap justify-center items-center">
       <label htmlFor="category">Entry Category:</label>
       <select
+        className="border border-solid rounded-md border-gray-400 p-2 m-2"
         id="category"
         name="category"
         onChange={handleOnChange}

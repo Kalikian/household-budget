@@ -18,7 +18,7 @@ export default function AmountInput() {
   }
 
   return (
-    <div className="flex items-center justify-between w-full">
+    <div className="flex flex-wrap justify-center items-center">
       <label htmlFor="amount" className="">
         Amount:
       </label>
