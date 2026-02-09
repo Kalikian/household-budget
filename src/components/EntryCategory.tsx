@@ -1,9 +1,18 @@
 import React, { useState } from "react";
-import { ENTRY_CATEGORIES, type EntryCategoryType } from "../types/budget";
+import {
+  EXPENSE_CATEGORIES,
+  INCOME_CATEGORIES,
+  type EntryType,
+  type ExpenseCategoryType,
+  type IncomeCategoryType,
+} from "../types/budget";
 
-type EntryCategorySelectValue = EntryCategoryType | "";
+type EntryCategorySelectValue = ExpenseCategoryType | IncomeCategoryType | "";
+type EntryCategoryProps = {
+  value: EntryType;
+};
 
-export default function EntryCategory() {
+export default function EntryCategory({ value }: EntryCategoryProps) {
   const [selcetAction, setSelectAction] =
     useState<EntryCategorySelectValue>("");
 
@@ -24,9 +33,9 @@ export default function EntryCategory() {
         <option className="text-gray-400" value="" disabled>
           -- Enter Category --
         </option>
-        {ENTRY_CATEGORIES.map((v) => (
-          <option key={v}>{v}</option>
-        ))}
+        {value === "expense"
+          ? EXPENSE_CATEGORIES.map((v) => <option key={v}>{v}</option>)
+          : INCOME_CATEGORIES.map((v) => <option key={v}>{v}</option>)}
       </select>
     </div>
   );

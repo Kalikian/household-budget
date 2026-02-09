@@ -18,7 +18,7 @@ export type Category = {
 
 //einmal die Kategorien als Daten definieren und dann den Typ ableiten
 //single source of truth (Sicher und mehr Wartbar) die Kategorien nur hier ändern
-export const ENTRY_CATEGORIES = [
+export const EXPENSE_CATEGORIES = [
     "Housing",
     "Utility",
     "Food",
@@ -29,7 +29,19 @@ export const ENTRY_CATEGORIES = [
     "Personal Care",
     "Entertainment",
     "Clothing",
-    "Other",
+    "Other Expense",
 ] as const;
 
-export type EntryCategoryType = (typeof ENTRY_CATEGORIES)[number];
+export type ExpenseCategoryType = (typeof EXPENSE_CATEGORIES)[number];
+
+export const INCOME_CATEGORIES = [
+    "Salary",
+    "Bonus",
+    "Freelance / Contract",
+    "Government Benefits",
+    "Gifts",
+    "Refunds",
+    "Other Income"
+] as const;
+
+export type IncomeCategoryType = (typeof INCOME_CATEGORIES)[number];
