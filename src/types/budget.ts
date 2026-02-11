@@ -4,9 +4,9 @@ export type EntryType = "expense" | "income";
 export type Entry = {
     id: string;
     type: EntryType;
-    amount: number;
-    category: string;
-    date: string;
+    amount: number | string;
+    category: EntryCategorySelectValue;
+    createdAt: string;
     note?: string;
 };
 
@@ -45,3 +45,4 @@ export const INCOME_CATEGORIES = [
 ] as const;
 
 export type IncomeCategoryType = (typeof INCOME_CATEGORIES)[number];
+export type EntryCategorySelectValue = ExpenseCategoryType | IncomeCategoryType | "";

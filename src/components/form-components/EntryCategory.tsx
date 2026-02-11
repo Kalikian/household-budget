@@ -1,25 +1,21 @@
-import React, { useState } from "react";
 import {
   EXPENSE_CATEGORIES,
   INCOME_CATEGORIES,
+  type EntryCategorySelectValue,
   type EntryType,
-  type ExpenseCategoryType,
-  type IncomeCategoryType,
 } from "../../types/budget";
 
-type EntryCategorySelectValue = ExpenseCategoryType | IncomeCategoryType | "";
 type EntryCategoryProps = {
-  value: EntryType;
+  categoryValue: EntryCategorySelectValue;
+  actionValue: EntryType;
+  handleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
-export default function EntryCategory({ value }: EntryCategoryProps) {
-  const [selcetAction, setSelectAction] =
-    useState<EntryCategorySelectValue>("");
-
-  function handleOnChange(e: React.ChangeEvent<HTMLSelectElement>) {
-    setSelectAction(e.target.value as EntryCategorySelectValue);
-  }
-
+export default function EntryCategory({
+  categoryValue,
+  actionValue,
+  handleChange,
+}: EntryCategoryProps) {
   return (
     <div className="flex flex-col justify-center">
       <label htmlFor="category">Entry Category:</label>
@@ -27,13 +23,13 @@ export default function EntryCategory({ value }: EntryCategoryProps) {
         className="border border-solid rounded-md border-gray-400 p-2"
         id="category"
         name="category"
-        onChange={handleOnChange}
-        value={selcetAction}
+        onChange={handleChange}
+        value={categoryValue}
       >
         <option className="text-gray-400" value="" disabled>
           -- Enter Category --
         </option>
-        {value === "expense"
+        {actionValue === "expense"
           ? EXPENSE_CATEGORIES.map((v) => <option key={v}>{v}</option>)
           : INCOME_CATEGORIES.map((v) => <option key={v}>{v}</option>)}
       </select>

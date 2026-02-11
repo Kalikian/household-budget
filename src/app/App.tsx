@@ -8,7 +8,7 @@ function App() {
       <header className="flex justify-center my-6">
         <AppLogo />
       </header>
-      <main className="flex justify-center p-4">
+      <main className="flex flex-wrap justify-center p-4 gap-10">
         <EntryForm />
         <EntriesList />
       </main>
