@@ -1,5 +1,6 @@
 import AppLogo from "../components/AppLogo";
-import EntryForm from "../components/EntryForm";
+import EntriesList from "../components/EntriesList";
+import EntryForm from "../components/form-components/EntryForm";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       </header>
       <main className="flex justify-center p-4">
         <EntryForm />
+        <EntriesList />
       </main>
       <footer className="flex justify-center my-6"></footer>
     </>

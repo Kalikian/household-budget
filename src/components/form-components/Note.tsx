@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+type NoteProps = {
+  value: string;
+  handleChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+};
 
-export default function Note() {
-  const [text, setText] = useState("");
-
-  function handleOnChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
-    setText(e.target.value);
-  }
-
+export default function Note({ handleChange, value }: NoteProps) {
   return (
     <div className="flex flex-col justify-center">
       <label>Note:</label>
@@ -14,8 +11,8 @@ export default function Note() {
         className="border border-solid rounded-md border-gray-400 p-2"
         placeholder="Write your note ..."
         name="noteArea"
-        onChange={handleOnChange}
-        value={text}
+        onChange={handleChange}
+        value={value}
       ></textarea>
     </div>
   );

@@ -1,4 +1,4 @@
-import type { EntryType } from "../types/budget";
+import type { EntryType } from "../../types/budget";
 
 type EntryTypeSelectProps = {
   value: EntryType;

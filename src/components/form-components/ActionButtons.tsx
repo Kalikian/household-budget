@@ -1,3 +1,5 @@
+import { saveEntries } from "../../services/storage";
+
 export default function ActionButtons() {
   return (
     <div className="flex flex-row gap-2">
@@ -5,6 +7,7 @@ export default function ActionButtons() {
         className="btn bg-green-500 hover:bg-green-600 "
         type="button"
         aria-label="Submit Entry"
+        onClick={() => saveEntries}
       >
         Submit The Entry
       </button>

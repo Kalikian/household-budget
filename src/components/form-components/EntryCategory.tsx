@@ -5,7 +5,7 @@ import {
   type EntryType,
   type ExpenseCategoryType,
   type IncomeCategoryType,
-} from "../types/budget";
+} from "../../types/budget";
 
 type EntryCategorySelectValue = ExpenseCategoryType | IncomeCategoryType | "";
 type EntryCategoryProps = {
