@@ -14,20 +14,24 @@ export default function EntriesList() {
   }
 
   return (
-    <div className="border border-purple-500 p-4 rounded-2xl flex flex-col w-full max-w-6xl mx-auto gap-2 bg-white/40 backdrop-blur shadow-xl">
-      <table>
-        <tr>
+    <div className="p-4 rounded-2xl flex flex-col w-full max-w-6xl mx-auto gap-2 ">
+      <table className="w-full">
+        <tr className="border-b border-gray-400 ">
           <th>Category</th>
           <th>Note</th>
           <th>Amount</th>
           <th>Date</th>
         </tr>
         {EntyList.map((v) => (
-          <tr>
-            <td>{v.category}</td>
-            <td>{v.note ?? ""}</td>
-            <td>{v.amount}</td>
-            <td>{formatDate(v.createdAt)}</td>
+          <tr
+            className={`${v.type === "income" ? "text-green-500" : "text-red-500"} border-b border-gray-400 hover:bg-blue-50 transition`}
+          >
+            <td className="text-center p-2">{v.category}</td>
+            <td className="text-center p-2">{v.note ?? "-"}</td>
+            <td className="text-center p-2">
+              {`${v.type === "income" ? `+ ${v.amount} ` : `- ${v.amount}`}`}
+            </td>
+            <td className="text-center p-2">{formatDate(v.createdAt)}</td>
           </tr>
         ))}
       </table>
