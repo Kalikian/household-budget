@@ -1,5 +1,6 @@
 import type { Entry } from "../types/budget";
 import { loadEntries } from "../services/storage";
+import Balance from "./Balance";
 
 export default function EntriesList() {
   const EntyList: Entry[] = loadEntries();
@@ -24,7 +25,7 @@ export default function EntriesList() {
         </tr>
         {EntyList.map((v) => (
           <tr
-            className={`${v.type === "income" ? "text-green-500" : "text-red-500"} border-b border-gray-400 hover:bg-blue-50 transition`}
+            className={`${v.type === "income" ? "text-green-600" : "text-red-600"} border-b border-gray-400 hover:bg-blue-50 transition`}
           >
             <td className="text-center p-2">{v.category}</td>
             <td className="text-center p-2">{v.note ?? "-"}</td>
@@ -35,6 +36,7 @@ export default function EntriesList() {
           </tr>
         ))}
       </table>
+      <Balance entries={EntyList} />
     </div>
   );
 }
