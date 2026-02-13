@@ -10,11 +10,13 @@ import type {
   ExpenseCategoryType,
   IncomeCategoryType,
 } from "../../types/budget";
-import { loadEntries, saveEntries } from "../../services/storage";
 
 type EntryCategorySelectValue = ExpenseCategoryType | IncomeCategoryType | "";
+type EntryFormProps = {
+  addEntry: (entry: Entry) => void;
+};
 
-export default function EntryForm() {
+export default function EntryForm({ addEntry }: EntryFormProps) {
   const [selectedAction, setSelectedAction] = useState<EntryType>("expense");
   const [amount, setAmount] = useState<string | number>("");
   const [text, setText] = useState("");
@@ -59,10 +61,16 @@ export default function EntryForm() {
       note: text,
     };
 
-    const entries = loadEntries();
-    saveEntries([entry, ...entries]);
+    addEntry(entry);
+    resetEntries();
   }
 
+  function resetEntries(): void {
+    setSelectedAction("expense");
+    setAmount("");
+    setText("");
+    setSelectCategory("");
+  }
   return (
     <form
       className="border border-purple-500 p-4 rounded-2xl flex flex-col w-full max-w-6xl mx-auto gap-2 bg-white/40 backdrop-blur shadow-xl"
@@ -72,7 +80,7 @@ export default function EntryForm() {
         value={selectedAction}
         handleChange={handleEntyTypeChange}
       ></EntryTypeSelect>
-      <div className="flex flex-col justify-center  gap-2">
+      <div className="flex flex-col justify-center gap-2">
         <AmountInput value={amount} handleChange={handleAmountChange} />
         <EntryCategory
           actionValue={selectedAction}
