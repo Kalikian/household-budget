@@ -1,8 +1,13 @@
 import type { Entry } from "../types/budget";
 import { loadEntries } from "../services/storage";
 import Balance from "./Balance";
+import ClearEntriesButton from "./ClearEntriesButton";
 
-export default function EntriesList() {
+type EntriesListProps = {
+  clearStateEntries: () => void;
+};
+
+export default function EntriesList({ clearStateEntries }: EntriesListProps) {
   const EntyList: Entry[] = loadEntries();
 
   function formatDate(iso: string): string {
@@ -37,6 +42,7 @@ export default function EntriesList() {
         ))}
       </table>
       <Balance entries={EntyList} />
+      <ClearEntriesButton clearStateEntries={clearStateEntries} />
     </div>
   );
 }
