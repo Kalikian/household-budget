@@ -89,7 +89,7 @@ export default function EntryForm({ addEntry }: EntryFormProps) {
         ></EntryCategory>
         <Note value={text} handleChange={handleNoteChange} />
       </div>
-      <ActionButtons />
+      <ActionButtons resetEntries={resetEntries} />
     </form>
   );
 }

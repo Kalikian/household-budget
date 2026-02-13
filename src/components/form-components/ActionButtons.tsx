@@ -1,4 +1,8 @@
-export default function ActionButtons() {
+type ActionButtonsProps = {
+  resetEntries: () => void;
+};
+
+export default function ActionButtons({ resetEntries }: ActionButtonsProps) {
   return (
     <div className="flex flex-row gap-2">
       <button
@@ -10,8 +14,9 @@ export default function ActionButtons() {
       </button>
       <button
         className="btn bg-gray-400 hover:bg-gray-500"
-        type="reset"
+        type="button"
         aria-label="Reset"
+        onClick={resetEntries}
       >
         Reset
       </button>
