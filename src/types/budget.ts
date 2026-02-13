@@ -19,6 +19,7 @@ export type Category = {
 //einmal die Kategorien als Daten definieren und dann den Typ ableiten
 //single source of truth (Sicher und mehr Wartbar) die Kategorien nur hier ändern
 export const EXPENSE_CATEGORIES = [
+    "expense",
     "Housing",
     "Utility",
     "Food",
@@ -35,6 +36,7 @@ export const EXPENSE_CATEGORIES = [
 export type ExpenseCategoryType = (typeof EXPENSE_CATEGORIES)[number];
 
 export const INCOME_CATEGORIES = [
+    "income",
     "Salary",
     "Bonus",
     "Freelance / Contract",

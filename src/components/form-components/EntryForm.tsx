@@ -23,6 +23,10 @@ export default function EntryForm({ addEntry }: EntryFormProps) {
   const [selectCategory, setSelectCategory] =
     useState<EntryCategorySelectValue>("");
 
+  let finalCategory: EntryCategorySelectValue;
+
+  if (selectCategory === "") finalCategory = selectedAction;
+
   function handleEntyTypeChange(next: EntryType) {
     setSelectedAction(next);
   }
@@ -51,12 +55,13 @@ export default function EntryForm({ addEntry }: EntryFormProps) {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (amount === "") return;
 
     const entry: Entry = {
       id: crypto.randomUUID(),
       type: selectedAction,
       amount: amount,
-      category: selectCategory,
+      category: finalCategory,
       createdAt: new Date().toISOString(),
       note: text,
     };

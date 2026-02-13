@@ -4,7 +4,6 @@ import EntriesList from "../components/EntriesList";
 import EntryForm from "../components/form-components/EntryForm";
 import { clearEntries, loadEntries, saveEntries } from "../services/storage";
 import type { Entry } from "../types/budget";
-import ClearEntriesButton from "../components/ClearEntriesButton";
 
 function App() {
   const [entries, setEntries] = useState(loadEntries());
