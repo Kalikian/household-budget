@@ -30,7 +30,6 @@ export const EXPENSE_CATEGORIES = [
     "Personal Care",
     "Entertainment",
     "Clothing",
-    "Other Expense",
 ] as const;
 
 export type ExpenseCategoryType = (typeof EXPENSE_CATEGORIES)[number];
@@ -42,8 +41,7 @@ export const INCOME_CATEGORIES = [
     "Freelance / Contract",
     "Government Benefits",
     "Gifts",
-    "Refunds",
-    "Other Income"
+    "Refunds"
 ] as const;
 
 export type IncomeCategoryType = (typeof INCOME_CATEGORIES)[number];

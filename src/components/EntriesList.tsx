@@ -2,6 +2,7 @@ import type { Entry } from "../types/budget";
 import { loadEntries } from "../services/storage";
 import Balance from "./Balance";
 import ClearEntriesButton from "./ClearEntriesButton";
+import Trash from "./ui/trash";
 
 type EntriesListProps = {
   clearStateEntries: () => void;
@@ -38,6 +39,14 @@ export default function EntriesList({ clearStateEntries }: EntriesListProps) {
               {`${v.type === "income" ? `+ ${v.amount} ` : `- ${v.amount}`}`}
             </td>
             <td className="text-center p-2">{formatDate(v.createdAt)}</td>
+            <td>
+              <button
+                className="transition-transform duration-200 ease-out hover:scale-125"
+                aria-label="Delete"
+              >
+                <Trash />
+              </button>
+            </td>
           </tr>
         ))}
       </table>
