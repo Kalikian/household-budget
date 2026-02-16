@@ -18,7 +18,7 @@ export default function AmountInput({ value, handleChange }: AmountInputProps) {
         placeholder="Enter amount"
         type="number"
         min={0}
-        step={1}
+        step={0.01}
         inputMode="decimal"
       ></input>
     </div>
