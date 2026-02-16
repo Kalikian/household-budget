@@ -7,7 +7,7 @@ export default function ClearEntriesButton({
 }: ClearEntriesButton) {
   return (
     <button
-      className="btn bg-red-500 hover:bg-red-600"
+      className="btn flex self-center w-fit bg-red-500 hover:bg-red-600 "
       type="button"
       onClick={clearStateEntries}
     >

@@ -14,6 +14,10 @@ function App() {
     saveEntries(newEntries);
   }
 
+  function deleteEntry(entry: Entry): void {
+    setEntries((prev) => prev.filter((e) => e.id !== entry.id));
+  }
+
   function clearStateEntries(): void {
     clearEntries();
     setEntries([]);
@@ -26,7 +30,11 @@ function App() {
       </header>
       <main className="flex flex-wrap justify-center p-4 gap-10">
         <EntryForm addEntry={addEntry} />
-        <EntriesList clearStateEntries={clearStateEntries} />
+        <EntriesList
+          entries={entries}
+          clearStateEntries={clearStateEntries}
+          deleteEntry={deleteEntry}
+        />
       </main>
       <footer className="flex justify-center my-6"></footer>
     </>
