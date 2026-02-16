@@ -26,6 +26,7 @@ export default function EntryForm({ addEntry }: EntryFormProps) {
   let finalCategory: EntryCategorySelectValue;
 
   if (selectCategory === "") finalCategory = selectedAction;
+  else finalCategory = selectCategory;
 
   function handleEntyTypeChange(next: EntryType) {
     setSelectedAction(next);
