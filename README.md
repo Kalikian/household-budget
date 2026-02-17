@@ -1,5 +1,7 @@
 # Household Budget App
 
+**Live Demo:** https://kalikian.github.io/household-budget/
+
 ## Features
 
 - Create entries (income/expense) with amount, category, and optional note
